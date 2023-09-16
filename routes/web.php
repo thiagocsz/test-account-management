@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ContactController::class, 'index'])->name('contact.index');
-Route::get('/create', [ContactController::class, 'create'])->name('contact.create');
-Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
-Route::get('/{id}/edit', [ContactController::class, 'edit'])->name('contact.edit');
-Route::post('/{id}/update', [ContactController::class, 'update'])->name('contact.update');
-Route::post('/{id}/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');
+Route::middleware('auth')->group(function () {
+    Route::get('/create', [ContactController::class, 'create'])->name('contact.create');
+    Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
+    Route::get('/{id}/edit', [ContactController::class, 'edit'])->name('contact.edit');
+    Route::post('/{id}/update', [ContactController::class, 'update'])->name('contact.update');
+    Route::post('/{id}/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');
+});
+
+Route::get('/login', [LoginController::class, 'create'])->name('login');
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
