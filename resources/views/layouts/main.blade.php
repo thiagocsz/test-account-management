@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
     @include('layouts.build.head')
 <body>
     @include('layouts.build.header')
