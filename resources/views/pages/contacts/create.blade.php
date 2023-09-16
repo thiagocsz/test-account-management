@@ -3,12 +3,13 @@
 @section('title', 'Add Contact')
 
 @section('content')
-    <div class="container">
-        <div class="mb-4">
-            <h3>
-                Add Contact
-            </h3>
-        </div>
+<div class="card">
+  <div class="card-header">
+      <h3>
+          Add Contact
+      </h3>
+  </div>
+  <div class="card-body">
         <div>
             @include('layouts.build.messages')
             <form method="POST" action="{{ route('contact.store') }}">
@@ -29,6 +30,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+        </div>
         </div>
     </div>
 @endsection

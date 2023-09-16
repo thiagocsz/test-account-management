@@ -3,19 +3,19 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Deseja excluir esse registro?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Do you want to delete this record?</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Ao excluir o resgistro, ele não poderá ser mais recuperado.
+                When you delete the record, it can no longer be recovered.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                 <form id="delete-register" action="" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-danger">Excluir</button>
+                    <button type="submit" class="btn btn-danger">Destroy</button>
                 </form>
             </div>
         </div>
