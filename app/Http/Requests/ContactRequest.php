@@ -24,7 +24,7 @@ class ContactRequest extends FormRequest
         return [
             'name' => 'string|min:6',
             'email' => 'required|email|unique:contacts,email,' . $this->id .',id',
-            'contact' => 'required|integer|size:9',
+            'contact' => 'required|integer|digits:9|unique:contacts,contact,' . $this->id .',id',
         ];
     }
 
@@ -35,7 +35,8 @@ class ContactRequest extends FormRequest
             'email.required' => "The email field is required",
             'email.email' => "The email field was filled out incorrectly",
             'email.unique' => "Email provided already exists",
-            'contact.size' => "The contact field must have 9 characters",
+            'contact.unique' => "Contact provided already exists",
+            'contact.size' => "The contact field must have 9 numeros",
         ];
     }
 }

@@ -24,7 +24,7 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Contact</label>
-                  <input value="{{ $contact->contact }}" type="number" maxlength="9" name="contact" class="form-control" aria-describedby="contactHelp">
+                  <input value="{{ $contact->contact }}" type="number" name="contact" class="form-control" aria-describedby="contactHelp">
                   <div id="contactHelp" class="form-text">Fill in this field with exactly 9 numbers</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
